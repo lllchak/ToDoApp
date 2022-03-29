@@ -1,0 +1,18 @@
+{% extends 'ToDoApp/base.html' %}
+{% load ToDoApp_tags %}
+
+{% block content %}
+    <div class="screen">
+        {% include 'ToDoApp/sidebar.html' %}
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h1>Профиль</h1>
+                </div>
+                <div class="col-sm-4">
+                    <a href="#" class="btn btn-outline-primary">Изменить профиль</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

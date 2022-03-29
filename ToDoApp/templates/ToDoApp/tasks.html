@@ -1,0 +1,42 @@
+{% extends 'ToDoApp/base.html' %}
+{% load ToDoApp_tags %}
+
+{% block content %}
+    <div class="screen">
+        {% include 'ToDoApp/sidebar.html' %}
+        <main>
+            <div class="container pe-4">
+                {% if tasks %}
+                    <h3>Все таски</h3>
+                    <div class="row row-cols-3 row-cols-md-5 g-4">
+                    {% for el in tasks %}
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ el.title }}</h5>
+                                    <p class="card-text">{{ el.content }}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a type="button" class="btn btn-sm btn-outline-secondary">Готово</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    </div><br>
+                <a href="{% url 'create' %}" class="btn btn-primary">Добавить еще...</a>
+                {% else %}
+                    <article>
+                        <div class="center-item">
+                            <h1 class="d-flex justify-content-center">Тасков пока что нет</h1>
+                            <p class="d-flex justify-content-center text-secondary">Создайте первый!</p>
+                            <p class="d-flex justify-content-center">
+                                <a href="{% url 'create' %}" class="btn btn-primary">Создать таск</a>
+                            </p>
+                        </div>
+                    </article>
+                {% endif %}
+            </div>
+        </main>
+    </div>
+
+{% endblock %}

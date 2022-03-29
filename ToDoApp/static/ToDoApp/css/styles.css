@@ -1,0 +1,57 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.screen {
+   min-height: 88.8vh;
+   display: flex;
+   padding: 0 0 3vh 3vh;
+}
+
+.wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: white;
+    width: 18vh;
+    min-height: 100%;
+    top: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.content {
+   background-color: white;
+   height: 100%;
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.form-label {
+    margin-right: 4px;
+}
+
+.center-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

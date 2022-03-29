@@ -1,0 +1,158 @@
+{% extends 'ToDoApp/base.html' %}
+
+{% block content %}
+
+<body>
+
+    <main class="container mb-3">
+        <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+            <div class="col-md-6 px-0">
+                <h1 class="display-4">Добро пожаловать в TaskManager</h1>
+                <p class="lead my-3">Создавайте задачи на день чтобы ничего не забыть!</p>
+            </div>
+            {% if request.user.is_authenticated %}
+            <div>
+                <a href="{% url 'create' %}" class="btn btn-primary">
+                    Создать таск
+                </a>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary">Добавление</strong>
+                        <h3 class="mb-2">Как добавить таск</h3>
+                        <div class="border-bottom"></div>
+                        <p class="card-text mt-2">Небольшой помощник по тому, как добавить новый таск</p>
+                        <a href="#" class="btn btn-primary">Перейти</a>
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                        <img src="https://i.pinimg.com/236x/ff/d7/0f/ffd70f545ebc2e2fd36e4cf25a7c5881.jpg" alt="Какая то картинка" width="200" height="250">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary">Удаление</strong>
+                        <h3 class="mb-2">Как удалить таск</h3>
+                        <div class="border-bottom"></div>
+                        <p class="card-text mt-2">Руководство по удалению ненужного таска (я еще сам не знаю как это делать)</p>
+                        <a href="#" class="btn btn-primary">Перейти</a>
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                        <img src="https://i.pinimg.com/236x/8f/1a/fb/8f1afb26473694ae2874a959a6543b1f.jpg" alt="Какая то картинка" width="200" height="250">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-md-8">
+                <h3 class="pb-4 mb-4 fst border-bottom">
+                    Статистика
+                </h3>
+                <p>Здесь можно будет выводить сколько человек выполнил за день задач и все такое</p>
+                <article class="blog-post">
+                    <h2 class="blog-post-title">Какой то пост/статья</h2>
+                    <p class="blog-post-meta">30 ноября, 2021</p>
+                    <p>Просто блок на будущее, пока не знаю, зачем он тут вообще надо.</p>
+                    <hr> <!-- прикольная штука для красивого разделения -->
+                    <p>Текст просто для того чтобы посмотреть как работает разделитель. (как выяснолось - прикольно)</p>
+                </article>
+
+                <article class="blog-post">
+                    <h2 class="blog-post-title">Еще один пост/статья</h2>
+                    <p class="blog-post-meta">27 ноября, 2021</p>
+                    <p>Текст просто чтобы зполнить блок и не оставлять его пустым.</p>
+                    <blockquote>
+                        <p>Вот так может выглядет цитата с<strong> выделенным тестом </strong>на странице.</p>
+                    </blockquote>
+                    <h3>Пример таблички</h3>
+                    <p>Можно вставить какую то вот такую табличку, пока не знаю зачем, но выглядит норм. <br> Но все таки наверное это лучше на страницу с тасками закинуть.</p>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Таск</th>
+                            <th>Описание</th>
+                            <th>Запланировано</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Молоко</td>
+                            <td>Купить молоко</td>
+                            <td>11.12.2021</td>
+                        </tr>
+                        <tr>
+                            <td>Хлеб</td>
+                            <td>Купить хлеб</td>
+                            <td>11.12.2021</td>
+                        </tr>
+                        <tr>
+                            <td>Разобрать контрольную</td>
+                            <td>Там по ТВиМСу контрольная лежит нерешенная</td>
+                            <td>04.12.2021</td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td>Футер</td>
+                            <td>Вот здесь футер будет, но для этой таблички он не особо нужен</td>
+                            <td>00.00.0000</td>
+                        </tr>
+                        </tfoot>
+                    </table>
+
+                    <p>Ну и описание можно написать через тег 'p', ну как и везде собственно </p>
+                </article>
+
+                <article class="blog-post">
+                    <h2 class="blog-post-title">Еще один пост/статья</h2>
+                    <p class="blog-post-meta">14 Ноября, 2021</p>
+
+                    <p>Списочек можно сделать и все такое</p>
+                    <ul>
+                        <li>Первый элемент</li>
+                        <li>Второй элемент</li>
+                        <li>Третий элемент</li>
+                    </ul>
+                    <p>Ну и по традиции - описание.</p>
+                    <hr>
+                </article>
+
+                <nav class="blog-pagination" aria-label="Pagination">
+                    <a class="btn btn-outline-primary" href="#">Наверх</a>
+                </nav>
+
+            </div>
+
+            <div class="col-md-4">
+                <div class="position-sticky" style="top: 2rem;">
+                    <div class="p-4 mb-3 bg-light rounded">
+                        <h4 class="fst">О нас</h4>
+                        <p class="mb-0">Сервис создан, чтобы максимально облегчить повседневную жизнь всех и каждого.
+                            <br> Надеемся вам тут что то понравится!
+                        </p>
+                    </div>
+
+                    <div class="p-4">
+                        <h4 class="fst">Контакты разработчиков</h4>
+                        <ol class="list-unstyled">
+                            <li><a class="btn btn-outline-primary text-black mb-2" href="https://github.com/lllchak">GitHub</a></li>
+                            <li><a class="btn btn-outline-primary text-black mb-2" href="https://twitter.com/lllchak">Twitter</a></li>
+                            <li><a class="btn btn-outline-primary text-black" href="t.me/lllchak">Telegram</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+</body>
+
+{% endblock %}
